@@ -32,9 +32,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.black,
         title: Center(child: Text("ATM Consultoria"))
       ),
       body: Container(

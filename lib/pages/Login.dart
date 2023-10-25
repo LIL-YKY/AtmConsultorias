@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -41,7 +41,6 @@ class _LoginState extends State<Login> {
                 Text(
                   'Bem vindo de volta, sentimos sua falta!',
                   style: TextStyle(
-                    color: Colors.grey[700],
                     fontSize: 16,
                   ),
                 ),
@@ -74,7 +73,7 @@ class _LoginState extends State<Login> {
                     children: [
                       Text(
                         'Esqueceu a senha?',
-                        style: TextStyle(color: Colors.grey[600]),
+                        style: TextStyle(),
                       ),
                     ],
                   ),
@@ -104,7 +103,7 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
                           'Ou continue com:',
-                          style: TextStyle(color: Colors.grey[700]),
+                          style: TextStyle(),
                         ),
                       ),
                       Expanded(
@@ -141,7 +140,7 @@ class _LoginState extends State<Login> {
                   children: [
                     Text(
                       'Não é membro?',
-                      style: TextStyle(color: Colors.grey[700]),
+                      style: TextStyle(),
                     ),
                     const SizedBox(width: 4),
                     const Text(

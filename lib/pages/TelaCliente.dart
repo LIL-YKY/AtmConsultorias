@@ -11,9 +11,9 @@ class _TelaClienteState extends State<TelaCliente> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.black,
         title: Text("Clientes"),
       ),
       body: SingleChildScrollView(
@@ -28,7 +28,7 @@ class _TelaClienteState extends State<TelaCliente> {
                   children: <Widget>[
                     Image.asset("lib/images/detalhe_cliente.png"),
                     Padding(padding: EdgeInsets.only(left: 32),
-                      child: Text("Clientes", style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500),
+                      child: Text("Clientes", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                       ),
                     ),
                   ],
@@ -38,13 +38,13 @@ class _TelaClienteState extends State<TelaCliente> {
                 child: Image.asset("lib/images/cliente1.png"),
               ),
                 Text("Empresa de Softfware",
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+                  style: TextStyle(fontSize: 18,),
                 ),
               Padding(padding: EdgeInsets.only(top: 32),
                 child: Image.asset("lib/images/cliente2.png"),
               ),
               Text("Empresa de Auditoria",
-                style: TextStyle(fontSize: 18, color: Colors.black),
+                style: TextStyle(fontSize: 18,),
               ),
 
             ],

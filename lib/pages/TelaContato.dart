@@ -14,9 +14,9 @@ class _TelaContatoState extends State<TelaContato> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.black,
         title: Text("Contatos"),
       ),
       body: SingleChildScrollView(
@@ -31,7 +31,7 @@ class _TelaContatoState extends State<TelaContato> {
                   children: <Widget>[
                     Image.asset("lib/images/detalhe_contato.png"),
                     Padding(padding: EdgeInsets.only(left: 32),
-                      child: Text("Contatos", style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500),
+                      child: Text("Contatos", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                       ),
                     ),
                   ],
@@ -39,22 +39,22 @@ class _TelaContatoState extends State<TelaContato> {
               ),
               Padding(padding: EdgeInsets.only(top: 32),
               child:  Text("Email: example@example.com",
-                style: TextStyle(fontSize: 18, color: Colors.black),
+                style: TextStyle(fontSize: 18 ),
               ),
               ),
               Padding(padding: EdgeInsets.only(top: 16),
               child: Text("Telefone: +55 (46) 3225-5555",
-                style: TextStyle(fontSize: 18, color: Colors.black),
+                style: TextStyle(fontSize: 18),
               ),
               ),
               Padding(padding: EdgeInsets.only(top: 16),
                 child: Text("Celular: +55 (46) 99999-9999 ${widget.valor}",
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+                  style: TextStyle(fontSize: 18,),
                 ),
               ),
               Padding(padding: EdgeInsets.only(top: 16),
                 child: Text("App desenvolvido por: ${widget.valor}",
-                  style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
             ],

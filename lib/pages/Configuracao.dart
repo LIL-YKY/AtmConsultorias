@@ -48,7 +48,9 @@ class _ConfiguracaoState extends State<Configuracao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text(widget.title),
       ),
       body: ListView(
