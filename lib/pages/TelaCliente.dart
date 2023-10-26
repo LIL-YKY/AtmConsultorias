@@ -1,55 +1,31 @@
+import 'package:atm/components/cliente_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../controller/ClientesController.dart';
 
-class TelaCliente extends StatefulWidget {
-  const TelaCliente({super.key});
+class TelaCliente extends StatelessWidget {
+  const TelaCliente({Key? key}) : super(key: key);
 
-  @override
-  State<TelaCliente> createState() => _TelaClienteState();
-}
-
-class _TelaClienteState extends State<TelaCliente> {
   @override
   Widget build(BuildContext context) {
+    final ClientesController clientesController = Get.put(ClientesController());
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text("Clientes"),
+        title: Center(child: Text("Lista de Clientes")),
+        actions: <Widget>[
+          IconButton(onPressed: (){}, icon: Icon(Icons.add))
+        ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Image.asset("lib/images/detalhe_cliente.png"),
-                    Padding(padding: EdgeInsets.only(left: 32),
-                      child: Text("Clientes", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(top: 32),
-                child: Image.asset("lib/images/cliente1.png"),
-              ),
-                Text("Empresa de Softfware",
-                  style: TextStyle(fontSize: 18,),
-                ),
-              Padding(padding: EdgeInsets.only(top: 32),
-                child: Image.asset("lib/images/cliente2.png"),
-              ),
-              Text("Empresa de Auditoria",
-                style: TextStyle(fontSize: 18,),
-              ),
-
-            ],
-          ),
-        ),
+      body: GetX<ClientesController>(
+          builder: (clientesController) {
+            return ListView.builder(
+                itemCount: clientesController.count,
+                itemBuilder: (ctx,i) => ClienteTile(clientesController.all[i])
+            );
+          }
       ),
     );
   }

@@ -30,6 +30,7 @@ class _TelaServicoState extends State<TelaServico> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text("Serviços"),
       ),
       body: Container(
