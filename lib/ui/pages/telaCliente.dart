@@ -23,7 +23,7 @@ class TelaCliente extends StatelessWidget {
           builder: (clientesController) {
             return ListView.builder(
                 itemCount: clientesController.count,
-                itemBuilder: (ctx,i) => ClienteTile(clientesController.all[i])
+                itemBuilder: (ctx,i) => ClienteTile(clientesController.byIndex(i))
             );
           }
       ),

@@ -1,8 +1,8 @@
-import 'package:atm/components/NavBar.dart';
-import 'package:atm/pages/TelaCliente.dart';
-import 'package:atm/pages/TelaContato.dart';
-import 'package:atm/pages/TelaEmpresa.dart';
-import 'package:atm/pages/TelaServico.dart';
+import 'package:atm/ui/components/drawer.dart';
+import 'package:atm/ui/pages/telaCliente.dart';
+import 'package:atm/ui/pages/telaContato.dart';
+import 'package:atm/ui/pages/telaEmpresa.dart';
+import 'package:atm/ui/pages/telaServico.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
