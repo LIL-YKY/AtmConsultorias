@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:atm/pages/Configuracao.dart';
+import 'package:atm/ui/pages/configuracao.dart';
 
-import '../pages/Login.dart';
+import '../pages/telaLogin.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});

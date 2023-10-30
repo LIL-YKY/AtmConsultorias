@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:atm/models/Cliente.dart';
-import 'package:atm/controller/ClientesController.dart';
+import 'package:atm/data/models/cliente.dart';
+import 'package:atm/data/controller/clientesController.dart';
 
 class ClienteTile extends StatelessWidget {
   final Cliente cliente;

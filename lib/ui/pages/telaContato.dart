@@ -29,7 +29,7 @@ class _TelaContatoState extends State<TelaContato> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Image.asset("lib/images/detalhe_contato.png"),
+                    Image.asset("lib/ui/images/detalhe_contato.png"),
                     Padding(padding: EdgeInsets.only(left: 32),
                       child: Text("Contatos", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                       ),

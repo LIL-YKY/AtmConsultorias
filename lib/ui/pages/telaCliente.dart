@@ -1,7 +1,7 @@
-import 'package:atm/components/cliente_tile.dart';
+import 'package:atm/ui/components/cliente_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controller/ClientesController.dart';
+import 'package:atm/data/controller/clientesController.dart';
 
 class TelaCliente extends StatelessWidget {
   const TelaCliente({Key? key}) : super(key: key);

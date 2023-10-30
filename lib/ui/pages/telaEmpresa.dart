@@ -43,7 +43,7 @@ class _TelaEmpresaState extends State<TelaEmpresa> with TickerProviderStateMixin
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Image.asset("lib/images/detalhe_empresa.png"),
+                    Image.asset("lib/ui/images/detalhe_empresa.png"),
                     Padding(
                       padding: EdgeInsets.only(left: 32),
                       child: Text(

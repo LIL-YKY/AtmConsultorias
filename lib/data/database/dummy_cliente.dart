@@ -1,4 +1,4 @@
-import 'package:atm/models/Cliente.dart';
+import 'package:atm/data/models/cliente.dart';
 
 const DUMMY_CLIENTES = {
   '1': const Cliente (

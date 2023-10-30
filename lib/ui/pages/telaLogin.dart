@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:atm/pages/Home.dart';
-import 'package:atm/components/my_button.dart';
-import 'package:atm/components/my_textfield.dart';
-import 'package:atm/components/square_tile.dart';
+import 'package:atm/ui/pages/home.dart';
+import 'package:atm/ui/components/my_button.dart';
+import 'package:atm/ui/components/my_textfield.dart';
+import 'package:atm/ui/components/square_tile.dart';
 
-import '../controller/Validacoes.dart';
+import 'package:atm/data/controller/validacoes.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -123,12 +123,12 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     // google button
-                    SquareTile(imagePath: 'lib/images/google.png'),
+                    SquareTile(imagePath: 'lib/ui/images/google.png'),
 
                     SizedBox(width: 25),
 
                     // apple button
-                    SquareTile(imagePath: 'lib/images/apple.png')
+                    SquareTile(imagePath: 'lib/ui/images/apple.png')
                   ],
                 ),
 

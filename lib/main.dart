@@ -1,8 +1,8 @@
-import 'package:atm/pages/Home.dart';
-import 'package:atm/pages/Login.dart';
-import 'package:atm/theme/tema.dart';
+import 'package:atm/ui/pages/home.dart';
+import 'package:atm/ui/pages/telaLogin.dart';
+import 'package:atm/ui/theme/tema.dart';
 import 'package:flutter/material.dart';
-import 'controller/AppController.dart';
+import 'package:atm/data/controller/appController.dart';
 import 'package:get/get.dart';
 
 void main(){

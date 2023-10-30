@@ -43,18 +43,18 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset("lib/images/logo.png"),
+            Image.asset("lib/ui/images/logo.png"),
             Padding(padding: EdgeInsets.only(top: 32),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     GestureDetector(
                       onTap: _abrirEmpresa,
-                      child: Image.asset("lib/images/menu_empresa.png"),
+                      child: Image.asset("lib/ui/images/menu_empresa.png"),
                     ),
                     GestureDetector(
                       onTap: _abrirServico,
-                      child: Image.asset("lib/images/menu_servico.png"),
+                      child: Image.asset("lib/ui/images/menu_servico.png"),
                     )
                   ],
               ),
@@ -65,11 +65,11 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   GestureDetector(
                     onTap: _abrirCliente,
-                    child: Image.asset("lib/images/menu_cliente.png"),
+                    child: Image.asset("lib/ui/images/menu_cliente.png"),
                   ),
                   GestureDetector(
                     onTap: _abrirContato,
-                    child: Image.asset("lib/images/menu_contato.png"),
+                    child: Image.asset("lib/ui/images/menu_contato.png"),
                   )
                 ],
               ),

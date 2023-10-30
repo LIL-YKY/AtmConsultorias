@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:atm/database/dummy_cliente.dart';
-import '../models/Cliente.dart';
+import 'package:atm/data/database/dummy_cliente.dart';
+import '../models/cliente.dart';
 
 class ClientesController extends GetxController {
   final _items = RxList<Cliente>(DUMMY_CLIENTES.values.toList());
