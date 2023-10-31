@@ -16,7 +16,7 @@ class ClienteController extends GetxController {
 
   void fetchClientes() async {
     var dbClient = await DatabaseService().database;
-    List<Map> list = await dbClient.rawQuery('SELECT * FROM Cliente');
+    List<Map> list = await dbClient.rawQuery('SELECT * FROM Clientes');
     list.forEach((element) {
       clientes.add(Cliente.fromMap(element.cast<String, dynamic>()));
     });
@@ -24,14 +24,14 @@ class ClienteController extends GetxController {
 
   void addCliente(Cliente cliente) async {
     var dbClient = await DatabaseService().database;
-    cliente.id = await dbClient.insert('Cliente', cliente.toMap());
+    cliente.id = await dbClient.insert('Clientes', cliente.toMap());
     clientes.add(cliente);
   }
 
   void updateCliente(Cliente cliente) async {
     var dbClient = await DatabaseService().database;
     await dbClient.update(
-      'Cliente',
+      'Clientes',
       cliente.toMap(),
       where: 'id = ?',
       whereArgs: [cliente.id],
@@ -45,12 +45,17 @@ class ClienteController extends GetxController {
 
   void deleteCliente(Cliente cliente) async {
     var dbClient = await DatabaseService().database;
-    await dbClient.delete(
-      'Cliente',
+    await dbClient.update(
+      'Clientes',
+      {'deletado': 1},
       where: 'id = ?',
       whereArgs: [cliente.id],
     );
 
-    clientes.remove(cliente);
+    int index = clientes.indexWhere((c) => c.id == cliente.id);
+    if (index != -1) {
+      clientes[index].deletado = 1;
+    }
   }
+
 }
