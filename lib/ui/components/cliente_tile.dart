@@ -9,13 +9,13 @@ class ClienteTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ClientesController clientesController;
-    final avatar= cliente.avatarurl == null || cliente.avatarurl.isEmpty ? CircleAvatar(child: Icon(Icons.person))
-        :CircleAvatar(backgroundImage: NetworkImage(cliente.avatarurl));
+    ClienteController clientesController;
+    final avatar= cliente.imagemPerfil == null || cliente.imagemPerfil.isEmpty ? CircleAvatar(child: Icon(Icons.person))
+        :CircleAvatar(backgroundImage: NetworkImage(cliente.imagemPerfil));
     return ListTile(
       leading: avatar,
-      title: Text(cliente.name),
-      subtitle: Text(cliente.email),
+      title: Text(cliente.nome),
+      subtitle: Text(cliente.endereco),
       trailing: Container(
         width: 100,
         child: Row( children: <Widget>[

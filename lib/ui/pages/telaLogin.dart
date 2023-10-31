@@ -161,8 +161,8 @@ class _LoginState extends State<Login> {
   }
 
   _Entrar() {
-    String nomeUsuarioError = Validacoes.validarNomeUsuario(usernameController.text);
-    String senhaError = Validacoes.validarSenha(passwordController.text);
+    String nomeUsuarioError = validacaoLogin.validarNomeUsuario(usernameController.text);
+    String senhaError = validacaoLogin.validarSenha(passwordController.text);
 
     if (nomeUsuarioError != "correto") {
       ScaffoldMessenger.of(context).showSnackBar(

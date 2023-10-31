@@ -1,4 +1,7 @@
+import 'package:atm/ui/components/my_elevatedButton.dart';
+import 'package:atm/ui/pages/telaAddServico.dart';
 import 'package:flutter/material.dart';
+import 'telaAddCliente.dart';
 
 class TelaServico extends StatefulWidget {
   @override
@@ -39,12 +42,8 @@ class _TelaServicoState extends State<TelaServico> {
             itemCount: _itens.length,
             itemBuilder: (context, indice){
 
-              //Map<String, dynamic> item = _itens[indice];
-              //print("item ${ _itens[indice]["titulo"] }");
-
               return ListTile(
                 onTap: (){
-                  //print("clique com onTap ${indice}");
                   showDialog(
                       context: context,
                       builder: (context){
@@ -57,34 +56,38 @@ class _TelaServicoState extends State<TelaServico> {
                           ),
                           content: Text( _itens[indice]["descricao"] ),
                           actions: <Widget>[
-                            ElevatedButton(
-                                onPressed: (){
-                                  print("Selecionado sim");
-                                  Navigator.pop(context);
-                                },
-                                child: Text("Sim")
-                            ),
-                            ElevatedButton(
-                                onPressed: (){
+                            MyElevatedButton2(
+                            texto: "Sim",
+                            funcao:  (){
+                              print("Selecionado sim");
+                              Navigator.pop(context);
+                            },
+                          ),
+                            MyElevatedButton2(
+                                texto: "Não",
+                                funcao:  (){
                                   print("Selecionado nao");
                                   Navigator.pop(context);
                                 },
-                                child: Text("Não")
-                            )
+                            ),
                           ],
-                          //backgroundColor: Colors.orange,
                         );
                       }
                   );
                 },
-                /*onLongPress: (){
-                  print("clique com onLongPress");
-                },*/
                 title: Text( _itens[indice]["titulo"] ),
                 subtitle: Text( _itens[indice]["descricao"] ),
               );
             }
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> AdicionarServico()));
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.white70,
+        foregroundColor: Colors.black,
       ),
     );
   }

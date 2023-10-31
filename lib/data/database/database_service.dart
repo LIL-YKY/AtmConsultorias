@@ -14,10 +14,16 @@ class DatabaseService{
     _database = await _initialize();
     return _database!;
   }
+  void dispose() async {
+    if (_database != null) {
+      await _database!.close();
+      _database = null;
+    }
+  }
 }
 
 Future<String> get fullPath async{
-  const name ='todo.db';
+  const name ='atm.db';
   final path = await getDatabasesPath();
   return join(path, name);
 }

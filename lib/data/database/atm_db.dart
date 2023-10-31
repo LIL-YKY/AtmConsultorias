@@ -95,8 +95,9 @@ class AtmDB {
 
   Future<void> deleteServico(int id) async {
     final db = await database;
-    await db.delete(
+    await db.update(
       tableServicos,
+      {'deletado': 1},
       where: 'id = ?',
       whereArgs: [id],
     );

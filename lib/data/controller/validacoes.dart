@@ -1,4 +1,4 @@
-class Validacoes {
+class validacaoLogin {
   static String validarNomeUsuario(String value) {
     if (value.isEmpty) {
       return 'Por favor, insira um nome de usuário';
@@ -17,5 +17,50 @@ class Validacoes {
       return 'A senha deve conter pelo menos um caractere especial';
     }
     return 'correto';
+  }
+}
+
+class validacaoAddCliente{
+  String validarNome(String? valor) {
+    if (valor == null || valor.isEmpty) {
+      return 'Por favor, insira o nome';
+    }
+    return "correto";
+  }
+
+  String validarEndereco(String? valor) {
+    if (valor == null || valor.isEmpty) {
+      return 'Por favor, insira o endereço';
+    }
+    return "correto";
+  }
+
+  String validarTelefone(String? valor) {
+    if (valor == null || valor.isEmpty) {
+      return 'Por favor, insira o telefone';
+    }
+    return "correto";
+  }
+
+  String validarImagemPerfil(String? valor) {
+    if (valor == null || valor.isEmpty) {
+      return 'Por favor, insira o link da imagem de perfil';
+    }
+    return "correto";
+  }
+}
+
+class validacaoAddServico{
+  String validarDescicao(String? valor) {
+    if (valor == null || valor.isEmpty) {
+      return 'Por favor, insira o serviço';
+    }
+    return "correto";
+  }
+  String validarValor(String? valor) {
+    if (valor == null || valor.isEmpty) {
+      return 'Por favor, insira o Valor';
+    }
+    return "correto";
   }
 }
