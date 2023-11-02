@@ -18,7 +18,7 @@ class Cliente {
   // Converter um Cliente em um Map
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
+      //'id': id,
       'nome': nome,
       'endereco': endereco,
       'telefone': telefone,

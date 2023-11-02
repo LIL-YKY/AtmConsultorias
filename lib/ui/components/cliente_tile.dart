@@ -1,3 +1,4 @@
+import 'package:atm/ui/pages/TelaClienteDeatalhes.dart';
 import 'package:flutter/material.dart';
 import 'package:atm/data/models/cliente.dart';
 import 'package:atm/data/controller/clientesController.dart';
@@ -40,6 +41,12 @@ class ClienteTile extends StatelessWidget {
           ),
         ]),
       ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ClienteDetails(cliente)),
+        );
+      },
     );
   }
 }

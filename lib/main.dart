@@ -16,6 +16,9 @@ Future<void> main() async {
   // Obter o caminho completo do banco de dados
   final path = await fullPath;
 
+  // Apagar o banco de dados
+  //await deleteDatabase(path);
+
   // Inicialize o serviço de banco de dados
   DatabaseService dbService = DatabaseService();
 

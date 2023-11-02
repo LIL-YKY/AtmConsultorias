@@ -18,7 +18,7 @@ class AtmDB {
   Future<void> createTable(Database database) async {
     await database.execute('''
       CREATE TABLE $tableClientes(
-        id INTEGER PRIMARY KEY,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT,
         endereco TEXT,
         telefone TEXT,
