@@ -1,4 +1,5 @@
 import 'package:atm/ui/pages/TelaClienteDeatalhes.dart';
+import 'package:atm/ui/pages/telaAddCliente.dart';
 import 'package:flutter/material.dart';
 import 'package:atm/data/models/cliente.dart';
 import 'package:atm/data/controller/clientesController.dart';
@@ -27,18 +28,41 @@ class ClienteTile extends StatelessWidget {
         child: Row(children: <Widget>[
           IconButton(
             onPressed: () {
-              // Adicione a lógica para editar o cliente
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AdicionarCliente(cliente: cliente)));
             },
             icon: Icon(Icons.edit),
             color: Colors.orange,
           ),
           IconButton(
             onPressed: () {
-              clientesController.deleteCliente(cliente);
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Confirmação'),
+                    content: Text('Você tem certeza que deseja excluir este cliente?'),
+                    actions: <Widget>[
+                      TextButton(
+                        child: Text('Cancelar'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        child: Text('Excluir'),
+                        onPressed: () {
+                          clientesController.deleteCliente(cliente);
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
             },
             icon: Icon(Icons.delete),
             color: Colors.red,
-          ),
+          )
         ]),
       ),
       onTap: () {

@@ -1,14 +1,14 @@
 class validacaoLogin {
-  static String validarNomeUsuario(String value) {
+  static String? validarNomeUsuario(String value) {
     if (value.isEmpty) {
       return 'Por favor, insira um nome de usuário';
     } else if (value.length < 6) {
       return 'O nome de usuário deve ter pelo menos 6 caracteres';
     }
-    return 'correto';
+    return null;
   }
 
-  static String validarSenha(String value) {
+  static String? validarSenha(String value) {
     if (value.isEmpty) {
       return 'Por favor, insira uma senha';
     } else if (value.length < 8) {
@@ -16,51 +16,51 @@ class validacaoLogin {
     } else if (!RegExp(r'[!@#\$%\^&\*(),.?":{}|<>]').hasMatch(value)) {
       return 'A senha deve conter pelo menos um caractere especial';
     }
-    return 'correto';
+    return null;
   }
 }
 
 class validacaoAddCliente{
-  String validarNome(String? valor) {
+  String? validarNome(String? valor) {
     if (valor == null || valor.isEmpty) {
       return 'Por favor, insira o nome';
     }
-    return "correto";
+    return null;
   }
 
-  String validarEndereco(String? valor) {
+  String? validarEndereco(String? valor) {
     if (valor == null || valor.isEmpty) {
       return 'Por favor, insira o endereço';
     }
-    return "correto";
+    return null;
   }
 
-  String validarTelefone(String? valor) {
+  String? validarTelefone(String? valor) {
     if (valor == null || valor.isEmpty) {
       return 'Por favor, insira o telefone';
     }
-    return "correto";
+    return null;
   }
 
-  String validarImagemPerfil(String? valor) {
+  String? validarImagemPerfil(String? valor) {
     if (valor == null || valor.isEmpty) {
-      return 'Por favor, insira o link da imagem de perfil';
+      return null;
     }
-    return "correto";
+    return null;
   }
 }
 
 class validacaoAddServico{
-  String validarDescicao(String? valor) {
+  String? validarDescicao(String? valor) {
     if (valor == null || valor.isEmpty) {
       return 'Por favor, insira o serviço';
     }
-    return "correto";
+    return null;
   }
-  String validarValor(String? valor) {
+  String? validarValor(String? valor) {
     if (valor == null || valor.isEmpty) {
       return 'Por favor, insira o Valor';
     }
-    return "correto";
+    return null;
   }
 }

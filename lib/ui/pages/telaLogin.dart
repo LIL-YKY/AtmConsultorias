@@ -161,14 +161,14 @@ class _LoginState extends State<Login> {
   }
 
   _Entrar() {
-    String nomeUsuarioError = validacaoLogin.validarNomeUsuario(usernameController.text);
-    String senhaError = validacaoLogin.validarSenha(passwordController.text);
+    String? nomeUsuarioError = validacaoLogin.validarNomeUsuario(usernameController.text);
+    String? senhaError = validacaoLogin.validarSenha(passwordController.text);
 
-    if (nomeUsuarioError != "correto") {
+    if (nomeUsuarioError != null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(nomeUsuarioError)),
       );
-    } else if (senhaError != "correto") {
+    } else if (senhaError != null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(senhaError)),
       );
@@ -176,4 +176,5 @@ class _LoginState extends State<Login> {
       Navigator.push(context, MaterialPageRoute(builder: (context)=> Home()));
     }
   }
+
 }
